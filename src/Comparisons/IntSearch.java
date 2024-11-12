@@ -1,5 +1,7 @@
 package Comparisons;
 
+import javax.imageio.metadata.IIOMetadataFormatImpl;
+
 public class IntSearch {
     public static boolean linearSearchArray(int[] candidates, int target) {
         int index = 0;
@@ -31,4 +33,5 @@ public class IntSearch {
         }
         return indeks;
     }
+
 }
