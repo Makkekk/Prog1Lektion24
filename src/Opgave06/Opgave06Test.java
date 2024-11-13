@@ -9,5 +9,10 @@ public class Opgave06Test {
     public static void main(String[] args) {
         SpellsStorage storage = new SpellsStorage();
         ArrayList<Spell> spells = storage.getSpells();
+
+        storage.printSpellDescription("Silencio");
+        storage.printSpellDescription("Riddikulus");
+        storage.printSpellDescription("Ascendio");
     }
+
 }
