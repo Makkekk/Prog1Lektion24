@@ -18,7 +18,7 @@ public class CarStorage {
     }
 
 
-        public Car findFirstCarWithHigerSpeed(int speed) {
+        public Car findFirstCarWithHigherSpeed(int speed) {
             for (Car car : cars) {
                 if (car.getTopSpeed() > speed) {
                     return car;
@@ -38,4 +38,3 @@ public class CarStorage {
         return null;
         }
     }
-

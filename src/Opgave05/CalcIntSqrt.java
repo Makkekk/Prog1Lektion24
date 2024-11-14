@@ -1,39 +1,43 @@
 package Opgave05;
 
+import com.sun.tools.javac.Main;
+
 public class CalcIntSqrt {
 
 
-
-    public int integerSquareRootLinear(int n) {
+    public static int integerSquareRoot(int n) {
         int r = 0;
-        while (r * r <= n) {
+        while (r * r <= n) { //opfylder r^2 <= n
             r++;
         }
-        return r-1;
+        return r-1; //opfylder (r+1)^2 ved at minuse r
     }
 
-    public static int integerSquareRoot(int n) {
-        if (n < 0) {
-            System.out.println("Input må ikek være negativ");
+    public static int integerSquareRootBineary(int n) {
 
-        }
-
-        int left = 0;
-        int right = n;
-        int result = -1;
+        int left = 0; //Venstre grænseværdi
+        int right = n; //Højre grænseværdi
+        int result = -1; //variabel til at gemme værdi
 
         while (left <= right) {
-            int middle = (left + right) / 2;
+            int middle = (left + right) / 2; //Miderste værdi
 
-            //Tjek om middle er for stor uden at kvadrere
             if (middle > 0 && middle > n / middle) {
-                right = middle - 1; //Middle^2 > n, så vi søger lavere værdier
+                right = middle - 1; // Middel^2 > n, så der søges lavere værdier
             } else {
                 result = middle; // mid er en mulig kandidat
                 left = middle + 1; // Søg større værdier for at finde højest passende "r"
             }
         }
         return result;
+
+    }
+
+    public static void main(String[] args) {
+        int n = 16;
+        System.out.println("Heltalskvadraroden af " + n + "er: " + integerSquareRoot(n));
+
+
 
     }
 }

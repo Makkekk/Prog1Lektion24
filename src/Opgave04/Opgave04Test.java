@@ -3,18 +3,15 @@ package Opgave04;
 import Opgave04.Models.Car;
 import Opgave04.Storage.CarStorage;
 
-import java.util.ArrayList;
-
 public class Opgave04Test {
     public static void main(String[] args) {
         CarStorage carStorage = new CarStorage();
 
-        int testSpeed = 200;
-        Car fasterCar = carStorage.findFirstCarWithHigerSpeed(testSpeed);
+        int testSpeed = 260;
+        Car fasterCar = carStorage.findFirstCarWithHigherSpeed(testSpeed);
         if (fasterCar != null) {
             System.out.println("First car with speed higher than " + testSpeed + ": " + fasterCar.getBrand() + " " + fasterCar.getModel()
                     + " with top speed of " + fasterCar.getTopSpeed());
-            ;
 
         } else {
             System.out.println("No car found with topspeed higher than" + testSpeed);
